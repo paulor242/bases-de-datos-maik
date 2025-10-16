@@ -40,7 +40,34 @@ public class Main {
             }
         }
 
+        // eliminar 
+
+        System.out.print("Ingrese id a eliminar: ");
+        Long idE = scanner.nextLong();
+        for(Usuario u : usuarioRepository.listaruUsuarios()) {
+            if(u.getId().equals(id)) {
+                usuarioRepository.listaruUsuarios(idE);
+                System.out.println("Usuario eliminado");
+                break;
+            }
+        }
     
+
+        System.out.print("Ingrese id a actualizar: ");
+        Long idA = scanner.nextLong();
+        for(Usuario u : usuarioRepository.listaruUsuarios()) {
+            if(u.getId().equals(id)) {
+                System.out.print("Nuevo nombre: ");
+                String nuevoNombre = scanner.next();
+                System.out.print("Nueva edad: ");
+                int nuevaEdad = scanner.nextInt();
+                u.setNombre(nuevoNombre);
+                u.setEdad(nuevaEdad);
+                usuarioRepository.listaruUsuarios(u);
+                System.out.println("Usuario actualizado");
+                break;
+            }
+        }
 
         scanner.close();
     }
