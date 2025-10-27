@@ -40,17 +40,29 @@ public class Main {
             }
         }
 
-        // eliminar 
-
+        // eliminar usuario
         System.out.print("Ingrese id a eliminar: ");
         Long idE = scanner.nextLong();
         for(Usuario u : usuarioRepository.listaruUsuarios()) {
             if(u.getId().equals(id)) {
-                usuarioRepository.listaruUsuarios(idE);
+                usuarioRepository.eliminar(idE);
                 System.out.println("Usuario eliminado");
                 break;
             }
         }
+
+        // actualizar usuario 
+
+        System.out.print("Ingrese id a eliminar: ");
+        Long idU = scanner.nextLong();
+        for(Usuario u : usuarioRepository.listaruUsuarios()) {
+            if(u.getId().equals(id)) {
+                usuarioRepository.actualizar(idU);
+                System.out.println("Usuario eliminado");
+                break;
+            }
+        }
+
 
 
         scanner.close();

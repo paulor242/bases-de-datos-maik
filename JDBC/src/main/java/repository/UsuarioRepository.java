@@ -48,6 +48,20 @@ public class UsuarioRepository {
             e.printStackTrace();
         }
 
+        public void eliminar(Long id) {
+        usuarios.removeIf(u -> u.getId().equals(id));
+        }
+
+        public void actualizar( String nombre, Long edad) {
+        for (Usuario u : usuarios) {
+            if (u.getId().equals(id)) {
+                u.setNombre(nombre);
+                u.setEdad(edad);
+                break;
+            }
+        }
+    }
+
         return usuarios;
     }
 }
